@@ -29,14 +29,20 @@ public class GestionBanco {
         System.out.println("Introduce el sueldo bruto del cliente");
         sueldoBrutoMensual = teclado.nextDouble();
         if (edadCliente > 17 && edadCliente < 66) {
+            System.out.println("Introduce el sueldo bruto del cliente");
+            sueldoBrutoMensual = teclado.nextDouble();
             System.out.println("Introduce la cantidad de dinero que necesita");
             dineroPedidoBanco = teclado.nextDouble();
             if (dineroPedidoBanco < ((sueldoBrutoMensual * 12) * FACTOR_MULTIPLICATIVO)) {
                 System.out.println("Introduce el tiempo en el que piensa pagar la hipoteca");
                 edadAnyosHipoteca = teclado.nextInt();
-                if(edadAnyosHipoteca<30&&edadAnyosHipoteca>5){
-                    
-                }else{
+                if (edadAnyosHipoteca < 30 && edadAnyosHipoteca > 5) {
+                    if ((edadCliente + edadAnyosHipoteca) > 75) {
+                        System.out.println("Lo sentimos pero la suma no coincide");
+                    } else {
+                        System.out.println("Prestamo operativo");
+                    }
+                } else {
                     System.out.println("Los años de hipoteca no pueden ser");
                 }
             } else {
