@@ -87,13 +87,8 @@ public class GestionBancoConMetodos {
     }
 //metodo que devuelve true si dineroSolicitado es valido para el banco 
     public static boolean comprobadorDineroSolicitadoValido(double dineroPedido, double sueldo, double factorMulti) {
-        boolean cantidadValida = true;
-        if (dineroPedido < ((sueldo * 12) * factorMulti)) {
-            cantidadValida = true;
-        } else {
-            cantidadValida = false;
-        }
-        return cantidadValida;
+     
+        return dineroPedido < ((sueldo * 12) * factorMulti);
     }
 //metodo que devuelve true si la los anyos de hipoteca mas la edad del cliente no supera 75
     public static boolean comprobadorAnyosHipotecaValido(int anyosHipoteca, int edad) {
