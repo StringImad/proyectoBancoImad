@@ -31,22 +31,26 @@ public class GestionBanco {
 
             switch (eleccion) {
                 case 1:
-                   do{ System.out.println("Introduce la edad del cliente: (edad minima 18 edad maxima 66)");
-                    edadCliente = teclado.nextInt();
-                   }while(edadCliente<18||edadCliente>66);
+                    do {
+                        System.out.println("Introduce la edad del cliente: (edad minima 18 edad maxima 66)");
+                        edadCliente = teclado.nextInt();
+                    } while (edadCliente < 18 || edadCliente > 66);
                     //condicion si es mayor de 17 y menor de 66 
                     if (edadCliente > 17 && edadCliente < 66) {
-                       do{ System.out.println("Introduce el sueldo bruto del cliente (minimo 500€/mes)");
-                        sueldoBrutoMensual = teclado.nextDouble();
-                       }while(sueldoBrutoMensual<500);
-                       do{ System.out.println("Introduce la cantidad de dinero que necesita");
-                        dineroPedidoBanco = teclado.nextDouble();
-                       }while(dineroPedidoBanco>1000000);
+                        do {
+                            System.out.println("Introduce el sueldo bruto del cliente (minimo 500€/mes)");
+                            sueldoBrutoMensual = teclado.nextDouble();
+                        } while (sueldoBrutoMensual < 500);
+                        do {
+                            System.out.println("Introduce la cantidad de dinero que necesita");
+                            dineroPedidoBanco = teclado.nextDouble();
+                        } while (dineroPedidoBanco > 1000000);
                         //multiplicamos el sueldo menusal por 12 para conseguir el anual
                         if (dineroPedidoBanco < ((sueldoBrutoMensual * 12) * FACTOR_MULTIPLICATIVO)) {
-                         do{   System.out.println("Introduce el tiempo en el que piensa pagar la hipoteca");
-                            edadAnyosHipoteca = teclado.nextInt();
-                         }while(edadAnyosHipoteca<1||edadAnyosHipoteca>50);
+                            do {
+                                System.out.println("Introduce el tiempo en el que piensa pagar la hipoteca");
+                                edadAnyosHipoteca = teclado.nextInt();
+                            } while (edadAnyosHipoteca < 1 || edadAnyosHipoteca > 50);
                             if (edadAnyosHipoteca < 30 && edadAnyosHipoteca > 5) {
                                 if ((edadCliente + edadAnyosHipoteca) > 75) {
                                     System.out.println("Lo sentimos pero la suma no coincide");
